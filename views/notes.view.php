@@ -8,8 +8,10 @@
 
 
 <main>
-    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <?= 'this is project page ' ?>
-    </div>
+   <?php 
+   foreach($notes as $note) : ?>
+  <li><a href="<?="/note?id=". $note['ID'] ?>" class="text-blue-500"><?=$note['body']?></a> </li>
+   <?php endforeach ?>
 </main>
+
 <?php require './partials/footer.php' ?>

@@ -10,7 +10,7 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/" class=" <?= urlIS('/') ? 'bg-black-00 text-white'  : 'text-grey'  ?> rounded-md  px-3 py-2 text-sm font-medium text-white text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Home</a>
                         <a href="/about" class="<?= urlIS('/about.php') ? 'bg-black text-white'  : 'text-grey'  ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                        <a href="/project" class=" <?= urlIS('/project.php') ? 'bg-black text-white'  : 'text-grey'  ?>rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                        <a href="/notes" class=" <?= urlIS('/notes.php') ? 'bg-black text-white'  : 'text-grey'  ?>rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">notes</a>
                         <a href="/mission" class=" <?= urlIS('/mission.php') ? 'bg-black text-white'  : 'text-grey'  ?>rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Mission</a>
                         
 

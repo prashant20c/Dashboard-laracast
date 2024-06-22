@@ -15,7 +15,7 @@ class ConnectDatabase
         }
     }
 
-    public function executeQuery($query,$prams): PDOStatement|false
+    public function executeQuery($query,$prams): PDOStatement|false 
     {
         $statement = $this->connection->prepare($query);
         $statement->execute($prams);
