@@ -11,16 +11,11 @@ $currentUser = 1;
 $db = new connectDatabase($config[$database]);
 $query = 'select * from notes where id = :id';
 
-$note = $db->executeQuery($query,['id' =>$id ])->fetch();
-
-if(! $note){
-    abort(404);
-};
+$note = $db->executeQuery($query,['id' =>$id ])->findOrFail();
 
 
-if( $note['user_ID'] != 1){
-    abort(Response::FORBIDDEN);
-};
+authorize( $note['user_ID'] === 1);
+
 
 
 
