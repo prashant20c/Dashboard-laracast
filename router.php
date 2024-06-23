@@ -14,7 +14,7 @@ $routes = [
 
 //function to show error  
 
-function abort($code = 404)
+function abort($code = Response::NOT_FOUND)
 {
     http_response_code($code); 
     require "./views/$code.view.php";
