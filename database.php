@@ -10,7 +10,7 @@ class ConnectDatabase
     {
         try {
             $dsn = 'mysql:' . http_build_query($config, '', ';');
-            $this->connection = new PDO($dsn, $username, $password, [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+            $this->connection = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
         } catch (PDOException $e) {
             echo ($e->getMessage());
         }
@@ -21,6 +21,12 @@ class ConnectDatabase
         $this->statement = $this->connection->prepare($query);
         $this->statement->execute($prams);
         return $this;
+    }
+
+
+    public function get()
+    {
+        return $this->statement->fetchall();
     }
 
     public function find()

@@ -14,10 +14,7 @@ $query = 'select * from notes where id = :id';
 $note = $db->executeQuery($query,['id' =>$id ])->findOrFail();
 
 
-authorize( $note['user_ID'] === 1);
-
-
-
+authorize( $note['user_ID'] == 1);
 
 
 
