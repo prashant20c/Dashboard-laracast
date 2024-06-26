@@ -7,11 +7,11 @@
 
 
 <main>
-    <a href="/notes" class="text-blue-600 underline mb-4" >go back</a>
-    <div >
-        <h2><?= $note['body']  ?></h2>
-        <div>cereated date : <?= substr($note['created_at'],0,10)   ?></div>
-        
+    <a href="/notes" class="text-blue-600 underline mb-4">go back</a>
+    <div>
+        <h2><?= htmlspecialchars($note['body']) ?></h2>
+        <div>cereated date : <?= substr($note['created_at'], 0, 10)   ?></div>
+
     </div>
 
 
