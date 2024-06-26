@@ -1,23 +1,16 @@
 <?php
 class Validation
 {
-    public $errors = [];
+   
 
-    public function checkBody($input)
+    public static function string($string,$min,$max)
     {
-        if (strlen(trim($input)) == 0) {
-            $this->errors['body'] = "Body cannot be empty";
-            return false;
-        } elseif (strlen($input) > 1000) {
-            $this->errors['body'] = "Note description too long";
-            return false;
-        } else {
-            return true;
-        }
+        $strLen = strlen(trim($string));
+
+        return $strLen >= $min && $string <= $max;
+        
+        
     }
 
-    public function getErrors()
-    {
-        return $this->errors;
-    }
+   
 }
