@@ -1,10 +1,9 @@
-<?php require 'partials/doc.php' ?>
+<?php require base_path('views/partials/doc.php') ?>
 
 
 
-<?php require 'partials/nav.php'  ?>
-<?php require 'partials/header.php' ?>
-
+<?php require base_path('views/partials/nav.php')  ?>
+<?php require base_path('views/partials/header.php') ?>
 
 
 <main>
@@ -16,4 +15,4 @@
    <a href="/note-create"> <button class="text-blue-500 mt-3 hover:underline">Add Note +</button></a>
 </main>
 
-<?php require './partials/footer.php' ?>
+<?php require base_path('views/partials/footer.php') ?>

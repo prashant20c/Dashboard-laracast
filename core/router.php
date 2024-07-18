@@ -1,16 +1,16 @@
 <?php
 
+use core\Response;
 
 
-
-$routes = require './routes.php';
+$routes = require base_path('routes.php');
 
 //function to show error  
 
 function abort($code = Response::NOT_FOUND)
 {
     http_response_code($code); 
-    require "./views/$code.view.php";
+    require base_path("views/errors/$code.view.php");
     die();
 };
 

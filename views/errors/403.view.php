@@ -1,7 +1,9 @@
-<?php require 'partials/doc.php' ?>
+<?php require base_path('views/partials/doc.php') ?>
 
 
-    <?php require 'partials/nav.php'  ?>
+
+<?php require base_path('views/partials/nav.php')  ?>
+
     
 
 
@@ -13,4 +15,4 @@
             </div>
         </main>
 
-        <?php require './partials/footer.php'?>
+        <?php require base_path('views/partials/footer.php') ?>

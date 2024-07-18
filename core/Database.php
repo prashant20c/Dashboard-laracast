@@ -1,6 +1,11 @@
 <?php
 
-class ConnectDatabase
+namespace core;
+
+use PDO;
+use PDOException;
+
+class Database
 {
 
     public $connection;
