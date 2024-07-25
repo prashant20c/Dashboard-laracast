@@ -1,10 +1,9 @@
 <?php
 
-return [
-    '/' => base_path('controllers/index.php'),
-    '/about' => base_path('controllers/about.php'),
-    '/notes' => base_path('controllers/notes/index.php'),
-    '/mission' => base_path('controllers/mission.php'),
-    '/note' => base_path('controllers/notes/show.php'),
-    '/note-create' => base_path('controllers/notes/create.php')
-];
+    $router->get('/', 'controllers/index.php');
+    $router->get('/about', 'controllers/about.php');
+    $router->get('/notes', 'controllers/notes/index.php');
+    $router->get('/mission', 'controllers/mission.php');
+    $router->get('/note', 'controllers/notes/show.php');
+    $router->get('/note-create', 'controllers/notes/create.php');
+

@@ -24,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = 'INSERT INTO notes(body,user_ID) VALUES(:body,:user_ID)';
         $db = new Database($config[$database]);
         $db->executeQuery($query, ['body' => $body, 'user_ID' => 1]);
+
+        header('location: /notes');
+        exit();
     };
 };
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use core\Database;
 
@@ -8,20 +8,33 @@ $id = $_GET['id'];
 
 $currentUser = 1;
 
-// if($_SERVER['REQUEST_METHOD'] === 'POST'){
-//     dd($_SERVER);
-// };    woring in delete
-
-
-
 $db = new Database($config[$database]);
-$query = 'select * from notes where id = :id';
-
-$note = $db->executeQuery($query,['id' =>$id ])->findOrFail();
 
 
-authorize( $note['user_ID'] == 1);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    
+
+    //for authrorization
+
+    $query = 'select * from notes where id = :id';
+    $note = $db->executeQuery($query, ['id' => $id])->findOrFail();
+    authorize($note['user_ID'] == 1);
+
+    //
+
+//to delete
+    $db->executeQuery('delete from notes where id=:id', ['id' => $_POST['id']]);
+
+    header('location: /notes');
+    exit();
+} else {
+
+    //for authorization and get data 
+    $query = 'select * from notes where id = :id';
+    $note = $db->executeQuery($query, ['id' => $id])->findOrFail();
+    authorize($note['user_ID'] == 1);
 
 
-view('notes/show.view.php',['heading'=>'Notes','note'=>$note]);
-
+    view('notes/show.view.php', ['heading' => 'Notes', 'note' => $note]);
+}
