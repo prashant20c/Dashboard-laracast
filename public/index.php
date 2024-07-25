@@ -22,7 +22,7 @@ $router = new core\Router();
 $routes = require base_path('routes.php');
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-$method = $_SERVER['REQUEST_METHOD'];
+$method =$_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 
 
