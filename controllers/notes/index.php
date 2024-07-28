@@ -6,7 +6,7 @@ $currentUser = 1;
 
 $config = require base_path('config.php');
 
-$db = new Database($config[$database]);
+$db = new Database($config['$database']);
 $query = 'select * from notes where user_ID = ?';
 
 

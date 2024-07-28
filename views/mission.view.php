@@ -7,4 +7,4 @@
         <?= 'this is mission page ' ?>
     </div>
 </main>
-<?php require './partials/footer.php' ?>
+<?php require 'partials/footer.php' ?>

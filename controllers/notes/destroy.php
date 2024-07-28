@@ -9,7 +9,7 @@ $id = $_GET['id'];
 
 $currentUser = 1;
 
-$db = new Database($config[$database]);
+$db = new Database($config['$database']);
 
 
     //for authrorization

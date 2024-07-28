@@ -8,7 +8,7 @@ $id = $_GET['id'];
 
 $currentUser = 1;
 
-$db = new Database($config[$database]);
+$db = new Database($config['$database']);
 
     //for authorization and get data 
     $query = 'select * from notes where id = :id';
