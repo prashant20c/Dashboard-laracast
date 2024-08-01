@@ -4,29 +4,28 @@
 $config = require base_path('config.php');
 $errors = [];
 
-use core\Database;
+use core\App;
 use core\Validation;
+use core\Database;
 
-    $body = $_POST['body'];
+$body = $_POST['body'];
 
-    if (!Validation::string($body, 1, 1000)) {
-        $errors['body'] = 'A body of no more that 1000 characters is required.';
-    };
+if (!Validation::string($body, 1, 1000)) {
+    $errors['body'] = 'A body of no more that 1000 characters is required.';
+};
 
-    if(! empty($errors)){
-         return view('notes/create.view.php',['heading'=>'Add Note','errors' => $errors]);
-
-    };
-
+if (!empty($errors)) {
+    return view('notes/create.view.php', ['heading' => 'Add Note', 'errors' => $errors]);
+};
 
 
-    if (empty($errors)) {
 
-        $query = 'INSERT INTO notes(body,user_ID) VALUES(:body,:user_ID)';
-        $db = new Database($config['$database']);
-        $db->executeQuery($query, ['body' => $body, 'user_ID' => 1]);
+if (empty($errors)) {
 
-        header('location: /notes');
-        exit();
-    };
+    $db = App::resolve(Database::class);
+    $query = 'INSERT INTO notes(body,user_ID) VALUES(:body,:user_ID)';
+    $db->executeQuery($query, ['body' => $body, 'user_ID' => 1]);
 
+    header('location: /notes');
+    exit();
+};

@@ -16,6 +16,8 @@ $path = str_replace('\\',DIRECTORY_SEPARATOR,$class);
 require base_path("{$path}.php");
 });
 
+require base_path('bootstrap.php');
+
 
 
 $router = new core\Router();
@@ -31,8 +33,6 @@ $method =$_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 $router->route($uri,$method);
 
 ///extraction of file path going on.....
-
-
 
 
  

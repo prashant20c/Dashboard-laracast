@@ -1,12 +1,17 @@
 <?php
-use core\Database;
 
+use core\App;
+use core\Database;
 
 $currentUser = 1;
 
-$config = require base_path('config.php');
 
-$db = new Database($config['$database']);
+
+$db = App::resolve(Database::class);
+
+
+
+
 $query = 'select * from notes where user_ID = ?';
 
 
@@ -15,9 +20,7 @@ $query = 'select * from notes where user_ID = ?';
 
 $notes = $db->executeQuery($query,[$currentUser])->get();
 
-if(!$notes){
-    abort();
-}
+
 
 
 view('notes/index.view.php',['heading'=>'Notes','notes'=>$notes]);
