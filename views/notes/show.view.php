@@ -15,10 +15,10 @@
     </div>
     <form class="ml-5" method="post">
         <input type="hidden" name="_method" value="DELETE">
-        <input type="hidden" name='id' value="<?= $note['ID']?>">
+        <input type="hidden" name='id' value="<?= $note['ID'] ?>">
         <button class="px-4  mt-3 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Delete </button>
     </form>
-    <a href="/note-edit?id=<?=$note['ID'] ?>" ><button class="px-4 ml-5  mt-3 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Edit </button></a>
+    <a href="/note/edit?id=<?= $note['ID'] ?>"><button class="px-4 ml-5  mt-3 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Edit </button></a>
 
 
 

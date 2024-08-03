@@ -26,6 +26,8 @@
 -->
         <form class="w-[500px] ml-4" method="post">
             <input type="hidden" name="_method" value="PATCH">
+            <input type="hidden" name="id" value="<?= $note['ID'] ?>">
+            <input type="hidden" name="user_ID" value="<?= $note['user_ID'] ?>">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
 
@@ -35,15 +37,15 @@
                         <div class="col-span-full">
                             <label for="body" class="block text-sm font-medium leading-6 text-gray-900" required>Note description</label>
                             <div class="mt-2">
-                                <textarea id="body" name="body" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="write your note here..." required> <?= $_POST['body']?? '' ?> <?=$note['body']?></textarea>
-                            </div >
+                                <textarea id="body" name="body" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="write your note here..." required> <?= $_POST['body'] ?? '' ?> <?= $note['body'] ?></textarea>
+                            </div>
                             <?php if (isset($errors['body'])) : ?>
                                 <div class="text-red-500"><?= $errors['body'] ?></div>
 
                             <?php endif ?>
 
                         </div>
-                                
+
 
 
                     </div>
