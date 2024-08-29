@@ -10,5 +10,7 @@ $router->get('/note/edit', 'controllers/notes/edit.php');
 //post and delete
 $router->post('/note-create', 'controllers/notes/store.php');
 $router->delete('/note', 'controllers/notes/destroy.php');
-
 $router->Patch('/note/edit', 'controllers/notes/update.php');
+
+
+$router->get('/register','controllers/registration/create.php');

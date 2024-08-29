@@ -7,6 +7,9 @@
 
 require BASE_PATH. 'core/function.php';
 
+session_start();
+
+
 
 
 //connect to database and execuate a query .
