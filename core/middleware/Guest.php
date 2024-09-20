@@ -2,7 +2,7 @@
 
 namespace core\middleware;
 
-class Guest implements MiddlewareInterface
+class Guest 
 {
 
     public function handel()

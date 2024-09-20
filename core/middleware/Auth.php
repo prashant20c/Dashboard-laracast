@@ -2,7 +2,7 @@
 
 namespace core\middleware;
 
-class Auth implements MiddlewareInterface
+class Auth
 {
 
     public function handel()

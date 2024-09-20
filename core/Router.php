@@ -5,7 +5,7 @@ namespace core;
 use core\middleware\Auth;
 use core\middleware\Guest;
 use core\middleware\Middleware;
-use core\middleware\MiddlewareInterface;
+
 
 class Router
 {
@@ -68,11 +68,9 @@ class Router
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-               if($route['middleware']){
-                $middleware = Middleware::MAP[$route['middleware']];
-                $middlewareObj = new $middleware();
-                $this->handleMiddleware($middlewareObj);
-               }
+               
+                Middleware::resolve($route['middleware']);
+                
                
                 return require base_path($route['controller']);
             }
@@ -81,10 +79,7 @@ class Router
         $this->abort();
     }
 
-    private function handleMiddleware(MiddlewareInterface $middleware)
-    {
-        $middleware->handel();
-    }
+   
 }
     
 
