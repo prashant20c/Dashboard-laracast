@@ -47,3 +47,12 @@ function  view($path, $attribute = [])
     extract($attribute);
     require BASE_PATH . "/views/$path";
 };
+
+
+function login($userdata){
+    session_start();
+    $_SESSION['user'] = [
+        'email'=> $userdata['email'],
+        'fName' => $userdata['firstName']
+    ];
+};

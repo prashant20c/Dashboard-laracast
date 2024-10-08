@@ -9,7 +9,7 @@ class Auth
     {
 
         if (! $_SESSION['user'] ?? false) {
-            header('location: /register');
+            header('location: /login');
             exit;
         }
     }

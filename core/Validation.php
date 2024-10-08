@@ -25,4 +25,5 @@ class Validation
         return filter_var($password, FILTER_VALIDATE_REGEXP, ["options" => ["regexp" => $pattern]]);
     }
 
+
 }

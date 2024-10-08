@@ -41,7 +41,7 @@ if (!empty($errors)) {
 if (empty($errors)) {
 
     $query = 'INSERT INTO users(firstName,lastName,email,password) VALUES (:fName,:lName,:email,:password)';
-    $db->executeQuery($query, ['fName' => $fName, 'lName' => $lName, 'email' => $email, 'password' => $password]);
+    $db->executeQuery($query, ['fName' => $fName, 'lName' => $lName, 'email' => $email, 'password' => password_hash($password,PASSWORD_BCRYPT)]);
     $_SESSION['user'] = ['email' => $email,'fName'=>$fName];
     header('location: /');
     exit;

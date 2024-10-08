@@ -58,7 +58,9 @@ class Router
         require base_path("views/errors/$code.view.php");
         die();
     }
-
+/**
+ * 
+ */
     public function only($key)
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
@@ -68,10 +70,9 @@ class Router
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-               
+
                 Middleware::resolve($route['middleware']);
-                
-               
+         
                 return require base_path($route['controller']);
             }
         }
