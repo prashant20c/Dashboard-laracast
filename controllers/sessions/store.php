@@ -27,12 +27,12 @@ $userdata = $db->executeQuery('Select email,password,firstName from users where 
 
 
 if(!$userdata){
-    $errors['email'] = 'Check Email or password ';
+    $errors['login'] = 'Check Email or password ';
     return view('sessions/create.view.php',['errors'=>$errors]);
 }
 
 if(! password_verify($password,$userdata['password'])){
-    $errors['password'] = 'Check Email or password';
+    $errors['login'] = 'Check Email or password';
     return view('sessions/create.view.php',['errors'=>$errors]);
 }
 
