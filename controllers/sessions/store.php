@@ -21,7 +21,7 @@ if(!empty($errors)){
 }
 
 $db = App::resolve(Database::class);
-$userdata = $db->executeQuery('Select email,password,firstName from users where email = :email', ['email' => $email])->find();
+$userdata = $db->executeQuery('Select ID,email,password,firstName from users where email = :email', ['email' => $email])->find();
 
 /*  corss checking of email is partialy fixed.*/
 

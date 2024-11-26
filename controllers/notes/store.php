@@ -24,7 +24,7 @@ if (empty($errors)) {
 
     $db = App::resolve(Database::class);
     $query = 'INSERT INTO notes(body,user_ID) VALUES(:body,:user_ID)';
-    $db->executeQuery($query, ['body' => $body, 'user_ID' => 1]);
+    $db->executeQuery($query, ['body' => $body, 'user_ID' => $_SESSION['user']['ID']]);
 
     header('location: /notes');
     exit();

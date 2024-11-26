@@ -3,7 +3,7 @@
 use core\App;
 use core\Database;
 
-$currentUser = 1;
+$currentUser = $_SESSION['user']['ID'];
 
 
 

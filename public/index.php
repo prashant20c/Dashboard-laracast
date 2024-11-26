@@ -1,6 +1,15 @@
 <?php
 
 
+/**
+ * simple application has been complected . 
+ * working on refactoring of code. // valadiatuion class/ 
+ * revision on all the major class , w=understang the  flow of program.
+ * installing composer and  getting introduced to php framework i.e larabell
+ * s
+ * 
+ */
+
  const BASE_PATH =__DIR__ . '/../';
 
 

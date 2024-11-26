@@ -4,6 +4,7 @@ use core\App;
 use core\Database;
 $id = $_GET['id'];
 
+
 $currentUser = 1;
 $db = App::resolve(Database::class);
 

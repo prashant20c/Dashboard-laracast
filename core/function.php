@@ -53,6 +53,20 @@ function login($userdata){
     session_start();
     $_SESSION['user'] = [
         'email'=> $userdata['email'],
-        'fName' => $userdata['firstName']
+        'fName' => $userdata['firstName'],
+        'ID'=> $userdata['ID']
     ];
+
+    session_regenerate_id(true);
 };
+
+function logout(){
+    $_SESSION = [];
+    session_destroy();
+    $parms = session_get_cookie_params();
+
+    setcookie('PHPSESSID','',time() - 3600 ,$parms['path'],$parms['domain'],$parms['secure']);
+    
+
+
+}
