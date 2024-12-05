@@ -3,6 +3,7 @@
 use core\App;
 use core\Database;
 use core\Validation;
+use https\forms\Login;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -12,9 +13,9 @@ if (! Validation::email($email)) {
     $errors['email'] = 'Please Provide a Valid email address';
 }
 
-// if (!Validation::password($password)) {
-//     $errors['password'] = 'Minimum eight characters, at least one letter, one number and one special character:';
-// }
+if (!Validation::password($password)) {
+    $errors['password'] = 'Minimum eight characters, at least one letter, one number and one special character:';
+}
 
 if(!empty($errors)){
     return view('sessions/create.view.php',['errors'=>$errors]);
@@ -43,3 +44,4 @@ if(password_verify($password,$userdata['password'])){
     exit;
      
 }
+    
