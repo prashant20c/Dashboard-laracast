@@ -33,7 +33,6 @@ class Database
     {
         return $this->statement->fetchall();
     }
-
     public function find()
     {
 
